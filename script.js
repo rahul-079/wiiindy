@@ -3,9 +3,16 @@ const weatherApi = {
     baseUrl: "https://api.openweathermap.org/data/2.5/weather", 
 }
 document.body.style.backgroundImage="url('images/background.gif')";
-
+const searchButton = document.getElementById('search-button');
 
 const card=document.getElementById('search-bar');
+
+searchButton.addEventListener('click', () => {
+    console.log(card.value);
+    getWeatherReport(card.value);
+    document.querySelector('.matter').style.display = "block";
+});
+
 
 card.addEventListener('keypress',(event)=>{
     if(event.keyCode == 13) 
